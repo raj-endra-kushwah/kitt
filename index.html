@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(to bottom,#020111,#191621,#442244);
+}
+
+/* Stars */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2;}
+to{opacity:1;}
+}
+
+/* Hearts */
+
+.heart{
+position:absolute;
+color:#ff4d6d;
+font-size:18px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-120px);
+opacity:0;
+}
+}
+
+/* Envelope */
+
+.envelope{
+
+position:relative;
+width:220px;
+height:150px;
+background:#f5d5d5;
+cursor:pointer;
+transition:.8s;
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+border-left:110px solid transparent;
+border-right:110px solid transparent;
+border-top:75px solid #f28b82;
+transform-origin:top;
+transition:1s;
+z-index:2;
+}
+
+.open:before{
+transform:rotateX(180deg);
+}
+
+.card{
+
+position:absolute;
+width:500px;
+max-width:90%;
+padding:40px;
+background:white;
+border-radius:20px;
+display:none;
+text-align:center;
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+.card h1{
+font-family:'Dancing Script',cursive;
+font-size:55px;
+color:#ff4d6d;
+margin-bottom:20px;
+}
+
+#letter{
+
+font-size:19px;
+line-height:1.9;
+white-space:pre-wrap;
+min-height:300px;
+
+}
+
+button{
+
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#ff4d6d;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #ff4d6d;
+}
+
+.signature{
+margin-top:25px;
+font-family:'Dancing Script';
+font-size:38px;
+color:#ff4d6d;
+}
+
+.fade{
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="envelope" id="env"></div>
+
+<div class="card" id="card">
+
+<h1>My Dearest Shipra ❤️</h1>
+
+<p id="letter"></p>
+
+<div class="signature">
+Forever Yours ❤️
+</div>
+
+<button onclick="alert('No matter where life takes us, my heart will always choose you. ❤️')">
+I Love You ❤️
+</button>
+
+</div>
+
+<script>
+
+// stars
+
+for(let i=0;i<180;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+s.style.width=Math.random()*3+"px";
+s.style.height=s.style.width;
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+
+s.style.animationDelay=Math.random()*2+"s";
+
+document.body.appendChild(s);
+
+}
+
+// hearts
+
+function heart(){
+
+let h=document.createElement("div");
+
+h.className="heart";
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(15+Math.random()*25)+"px";
+h.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),10000);
+
+}
+
+setInterval(heart,300);
+
+const message=`My Dearest Shipra,
+
+Sometimes I wonder how someone as beautiful as you came into my life.
+
+Before you, days were just days.
+Now every morning feels brighter because somewhere in this world, you exist.
+
+Your smile has become my favorite place.
+Your happiness has quietly become my biggest wish.
+
+I don't promise a perfect life,
+but I promise to stand beside you through every storm,
+celebrate every little victory,
+and remind you every single day how special you are.
+
+If one day you ever doubt yourself,
+come back to this letter and remember...
+
+There is someone whose world becomes brighter simply because you smile.
+
+Thank you for being you.
+
+I love you more than words can ever explain. ❤️`;
+
+let i=0;
+
+function type(){
+
+if(i<message.length){
+
+document.getElementById("letter").innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(type,35);
+
+}
+
+}
+
+document.getElementById("env").onclick=function(){
+
+this.classList.add("open");
+
+setTimeout(()=>{
+
+this.style.display="none";
+
+document.getElementById("card").style.display="block";
+document.getElementById("card").classList.add("fade");
+
+type();
+
+},900);
+
+}
+
+</script>
+
+</body>
+</html>

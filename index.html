@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Love ❤️</title>
+<title>The End of Trust</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -40,11 +40,11 @@ from{opacity:.2;}
 to{opacity:1;}
 }
 
-/* Hearts */
+/* Broken Hearts */
 
 .heart{
 position:absolute;
-color:#ff4d6d;
+color:#8B0000;
 font-size:18px;
 animation:float 8s linear infinite;
 }
@@ -63,11 +63,10 @@ opacity:0;
 /* Envelope */
 
 .envelope{
-
 position:relative;
 width:220px;
 height:150px;
-background:#f5d5d5;
+background:#d9d9d9;
 cursor:pointer;
 transition:.8s;
 }
@@ -79,7 +78,7 @@ top:0;
 left:0;
 border-left:110px solid transparent;
 border-right:110px solid transparent;
-border-top:75px solid #f28b82;
+border-top:75px solid #888;
 transform-origin:top;
 transition:1s;
 z-index:2;
@@ -90,7 +89,6 @@ transform:rotateX(180deg);
 }
 
 .card{
-
 position:absolute;
 width:500px;
 max-width:90%;
@@ -100,49 +98,44 @@ border-radius:20px;
 display:none;
 text-align:center;
 box-shadow:0 20px 50px rgba(0,0,0,.4);
-
 }
 
 .card h1{
 font-family:'Dancing Script',cursive;
-font-size:55px;
-color:#ff4d6d;
+font-size:50px;
+color:#444;
 margin-bottom:20px;
 }
 
 #letter{
-
 font-size:19px;
 line-height:1.9;
 white-space:pre-wrap;
 min-height:300px;
-
 }
 
 button{
-
 margin-top:30px;
 padding:15px 35px;
 border:none;
 border-radius:40px;
-background:#ff4d6d;
+background:#444;
 color:white;
 font-size:18px;
 cursor:pointer;
 transition:.3s;
-
 }
 
 button:hover{
 transform:scale(1.08);
-box-shadow:0 0 25px #ff4d6d;
+box-shadow:0 0 25px #555;
 }
 
 .signature{
 margin-top:25px;
 font-family:'Dancing Script';
-font-size:38px;
-color:#ff4d6d;
+font-size:36px;
+color:#555;
 }
 
 .fade{
@@ -170,16 +163,16 @@ transform:translateY(0);
 
 <div class="card" id="card">
 
-<h1>My Dearest Shipra ❤️</h1>
+<h1>The Final Goodbye</h1>
 
 <p id="letter"></p>
 
 <div class="signature">
-Forever Yours ❤️
+A closed chapter
 </div>
 
-<button onclick="alert('No matter where life takes us, my heart will always choose you. ❤️')">
-I Love You ❤️
+<button onclick="alert('Some people become memories. Some become lessons. Today, I choose peace.')">
+Close This Chapter
 </button>
 
 </div>
@@ -206,14 +199,14 @@ document.body.appendChild(s);
 
 }
 
-// hearts
+// broken hearts
 
 function heart(){
 
 let h=document.createElement("div");
 
 h.className="heart";
-h.innerHTML="❤️";
+h.innerHTML="💔";
 
 h.style.left=Math.random()*100+"vw";
 h.style.fontSize=(15+Math.random()*25)+"px";
@@ -226,31 +219,35 @@ setTimeout(()=>h.remove(),10000);
 }
 
 setInterval(heart,300);
+const message = `
 
-const message=`My Dearest Shipra,
+Once, I believed that trust was enough.
 
-Sometimes I wonder how someone as beautiful as you came into my life.
+I was wrong.
 
-Before you, days were just days.
-Now every morning feels brighter because somewhere in this world, you exist.
+Some lessons arrive wrapped in promises,
+only to reveal themselves as pain.
 
-Your smile has become my favorite place.
-Your happiness has quietly become my biggest wish.
+This isn't a story about revenge.
+It's a story about learning the value of self-respect.
 
-I don't promise a perfect life,
-but I promise to stand beside you through every storm,
-celebrate every little victory,
-and remind you every single day how special you are.
+The trust I gave cannot be taken back.
+The time I spent cannot be returned.
+But the future is still mine to choose.
 
-If one day you ever doubt yourself,
-come back to this letter and remember...
+I refuse to let betrayal define who I become.
 
-There is someone whose world becomes brighter simply because you smile.
+The chapter is over.
+The door is closed.
+There are no second chances.
 
-Thank you for being you.
+Some scars remain,
+not to remind me of the pain,
+but to remind me never to ignore the truth again.
 
-I love you more than words can ever explain. ❤️`;
+Goodbye.
 
+💔`;
 let i=0;
 
 function type(){
